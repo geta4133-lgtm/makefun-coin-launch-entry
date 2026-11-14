@@ -2,6 +2,7 @@
 // Entry for makefun-coin-launch-01 bounty
 import * as fs from "node:fs";
 import * as path from "node:path";
+import * as process from "node:process";
 
 function main(): void {
   const botDir: string = process.env.MAKEFUN_BOT_DIR || "/bot";
