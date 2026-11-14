@@ -4,7 +4,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 
 function main(): void {
-  const botDir: string = process.env.MAKEFUN_BOT_DIR || ".";
+  const botDir: string = process.env.MAKEFUN_BOT_DIR || "/bot";
   const outputDir: string = process.env.MAKEFUN_OUTPUT_DIR || "/output";
 
   const srcPath: string = path.join(botDir, "LAUNCH.json");
