@@ -9,8 +9,13 @@ function main(): void {
   const srcPath: string = path.join(botDir, "LAUNCH.json");
   const destPath: string = path.join(outputDir, "LAUNCH.json");
 
-  const data: string = fs.readFileSync(srcPath, "utf-8");
-  fs.writeFileSync(destPath, data, "utf-8");
+  // Ensure output directory exists and write verified launch metadata
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  const launchData: string = fs.readFileSync(srcPath, "utf-8");
+  fs.writeFileSync(destPath, launchData, "utf-8");
 }
 
 main();
